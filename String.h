@@ -8,4 +8,13 @@ class String{
     String(const String& str);
     String(const char* str);
 
+    //Accessors
+    getValue();
+    getAllocator();
+    getReference();
+    getPointer();
+    getIterator();
+    getSize();
+
+    display();
 };
