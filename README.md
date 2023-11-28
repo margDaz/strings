@@ -56,3 +56,4 @@ Implement those functions that fall to you:
     Make a bare clone of your gitlab repository named group<group_number>.git (e.g. group1.git): git clone --bare <url> group<group_number>.git).
     Create an archive string_group<group_number>.tgz (e.g. string_group1.tgz) containing the bare clone, upload it to https://filesender.renater.fr/ and send us the link (david.parsons@inria.fr and sebastien.valette@creatis.insa-lyon.fr).
 
+test
