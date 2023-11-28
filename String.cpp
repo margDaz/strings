@@ -18,6 +18,33 @@ String::String(){
   data[size] = '\0';
 }
 
-String(const String& str){
-  
+// Copy constructor
+String::String(const String& other) {
+  size = other.size;
+  capacity = other.capacity;
+  data = new char[capacity];
+
+  // Copy the data from the other string
+  for (int i = 0; i <= size; ++i) {
+    data[i] = other.data[i];
+  }
+}
+
+// Constructor with a C-style string parameter
+String::String(const char* str) {
+    size = 0;
+    capacity = 10; // Initial capacity, can be adjusted based on requirements
+    while (str[size] != '\0') {
+        size++;
+    }
+
+    data = new char[capacity];
+
+    // Copy the provided string
+    for (int i = 0; i < size; ++i) {
+        data[i] = str[i];
+    }
+
+    // Add null terminator
+    data[size] = '\0';
 }
