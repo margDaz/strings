@@ -7,7 +7,7 @@ class String{
     String();
     String(const String& str);
     String(const char* str);
-
+/*
     //Accessors
     getValue();
     getAllocator();
@@ -16,5 +16,5 @@ class String{
     getIterator();
     getSize();
 
-    display();
+    display();*/
 };

@@ -15,6 +15,10 @@ void testCopyConstructor() {
     // For example, assert that str.size is the length of "Hello World"
     std::cout << str.size << std::endl;
     std::cout << str.data << std::endl;
+
+    String str2(str);
+    std::cout << str2.size << std::endl;
+    std::cout << str2.data << std::endl;
 }
 
 // Add more test functions for other functionalities

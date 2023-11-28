@@ -33,16 +33,13 @@ String::String(const String& other) {
 // Constructor with a C-style string parameter
 String::String(const char* str) {
     size = 0;
-    capacity = 10; // Initial capacity, can be adjusted based on requirements
-    while (str[size] != '\0') {
-        size++;
-    }
+    capacity = 100; // Initial capacity, can be adjusted based on requirements
 
     data = new char[capacity];
 
-    // Copy the provided string
-    for (int i = 0; i < size; ++i) {
-        data[i] = str[i];
+    while (str[size] != '\0' && size < capacity - 1) {
+      data[size] = str[size];
+      size++;
     }
 
     // Add null terminator
