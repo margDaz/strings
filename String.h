@@ -7,6 +7,7 @@ class String{
     String(const String& str);
     String(const char* str);
     int size();
+    void clear();
 
   protected:
     int len;

@@ -49,3 +49,10 @@ String::String(const char* str) {
 int String::size(){
   return len;
 }
+
+void String::clear(){
+  delete[] data;
+  len = 0;
+  data = new char[capacity];
+  data[0]='\0';
+}
