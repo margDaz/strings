@@ -48,3 +48,16 @@ String::String(const char* str) {
     // Add null terminator
     data[size] = '\0';
 }
+
+String::~String(){
+  delete[] data;
+  size = 0;
+}
+
+int String::getCapacity(){
+  return capacity;
+}
+
+bool String::isEmpty(){
+  return size == 0;
+}

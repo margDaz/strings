@@ -17,11 +17,30 @@ void testCopyConstructor() {
     std::cout << str.data << std::endl;
 }
 
+void testcapacity();
+void testEmpty();
 // Add more test functions for other functionalities
 
 int main() {
     testDefaultConstructor();
     testCopyConstructor();
+    testcapacity();
+    testEmpty();
     // Call other test functions
     return 0;
+}
+
+void testcapacity(){
+  String str;
+  std::cout << str.getCapacity() << std::endl;
+}
+void testEmpty(){
+  String str;
+  if (str.isEmpty()){
+    std::cout << "The string is empty" << std::endl;
+  } else {
+    std::cout << "The string is not empty" << std::endl;
+
+  }
+
 }

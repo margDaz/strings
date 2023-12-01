@@ -7,14 +7,17 @@ class String{
     String();
     String(const String& str);
     String(const char* str);
+    ~String();
+
+    //Member functions
+    bool isEmpty();
 
     //Accessors
-    getValue();
-    getAllocator();
-    getReference();
-    getPointer();
-    getIterator();
+/*
+    getData();
     getSize();
 
-    display();
+*/
+    int getCapacity();
+
 };
