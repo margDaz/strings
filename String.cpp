@@ -64,3 +64,22 @@ String& String::operator=(char c) {
   data[1] = '\0'; // Null-terminate the string
   return *this;
 }
+/*
+String String::operator+ (const char* rhs) const{
+  newlen = len + rhs.size();
+  char* newData = new char[capacity];
+
+  while (data[len] != '\0' && len < capacity - 1) {
+    newData[len] = data[len];
+    len++;
+  }
+
+  while (rhs.data[len] != '\0' && len < capacity - 1) {
+    newData[len] = rhs.data[len];
+    len++;
+  }
+
+
+  return
+
+}*/
