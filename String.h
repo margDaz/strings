@@ -9,7 +9,20 @@ class String{
     String();
     String(const String& str);
     String(const char* str);
+    int size();
+    void clear();
+    String& operator=(char c);
 
+  protected:
+    int len;
+/*
+    //Accessors
+    getValue();
+    getAllocator();
+    getReference();
+    getPointer();
+    getIterator();
+    getSize();
 
     int max_size() const;
     void resize(int newSize,char c);

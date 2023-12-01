@@ -56,7 +56,10 @@ int String::max_size() const{
 void String::resize(int newSize,char c){
   size = newSize;
   if (newSize<=size){
-    //remove in the memory the values above the size n in the list
+    //remove all, to replace by less (aka the newSize begining of data)
+    stockData = data[0;newSize-1];
+    clear();
+    data = stockData;
   }else{
     int i = size;
     for(i=size;i<newSize;++i){
