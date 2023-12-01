@@ -6,6 +6,7 @@ void testDefaultConstructor();
 void testCopyConstructor();
 void testClear();
 void testOperator();
+void testOperator_plus();
 // Add more test functions for other functionalities
 
 int main() {
@@ -13,6 +14,8 @@ int main() {
     testCopyConstructor();
     testClear();
     testOperator();
+    testOperator_plus();
+
     // Call other test functions
     std::exit(EXIT_SUCCESS);
 }
@@ -51,4 +54,12 @@ void testOperator(){
   str='c';
   std::cout << str.size() << std::endl;
   std::cout << str.data << std::endl;
+}
+
+void testOperator_plus(){
+  String str("Bonjour");
+  std::cout << str.data << std::endl;
+  String str2 = str+"Clement";
+  std::cout << str2.size() << std::endl;
+  std::cout << str2.data << std::endl;
 }

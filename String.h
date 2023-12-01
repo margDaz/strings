@@ -9,6 +9,7 @@ class String{
     int size();
     void clear();
     String& operator=(char c);
+    String operator+ (const char* rhs);
 
   protected:
     int len;

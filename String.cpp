@@ -64,22 +64,21 @@ String& String::operator=(char c) {
   data[1] = '\0'; // Null-terminate the string
   return *this;
 }
-/*
-String String::operator+ (const char* rhs) const{
-  newlen = len + rhs.size();
-  char* newData = new char[capacity];
 
-  while (data[len] != '\0' && len < capacity - 1) {
-    newData[len] = data[len];
-    len++;
+String String::operator+ (const char* rhs){
+  String result(data);
+  int newlen = len;
+  int rhs_len = 0;
+
+
+  while (rhs[rhs_len] != '\0' && newlen < capacity - 1) {
+    result.data[newlen] = rhs[rhs_len];
+    newlen++;
+    rhs_len++;
   }
 
-  while (rhs.data[len] != '\0' && len < capacity - 1) {
-    newData[len] = rhs.data[len];
-    len++;
-  }
+  result.data[newlen]='\0';
+  result.len=newlen;
+  return result;
 
-
-  return
-
-}*/
+}
