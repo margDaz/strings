@@ -5,12 +5,14 @@
 void testDefaultConstructor();
 void testCopyConstructor();
 void testClear();
+void testOperator();
 // Add more test functions for other functionalities
 
 int main() {
     testDefaultConstructor();
     testCopyConstructor();
     testClear();
+    testOperator();
     // Call other test functions
     std::exit(EXIT_SUCCESS);
 }
@@ -39,6 +41,14 @@ void testClear(){
   String str("Bonjour");
   std::cout << str.data << std::endl;
   str.clear();
+  std::cout << str.size() << std::endl;
+  std::cout << str.data << std::endl;
+}
+
+void testOperator(){
+  String str("Bonjour");
+  std::cout << str.data << std::endl;
+  str='c';
   std::cout << str.size() << std::endl;
   std::cout << str.data << std::endl;
 }

@@ -8,6 +8,7 @@ class String{
     String(const char* str);
     int size();
     void clear();
+    String& operator=(char c);
 
   protected:
     int len;

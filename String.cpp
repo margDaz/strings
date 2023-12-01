@@ -56,3 +56,11 @@ void String::clear(){
   data = new char[capacity];
   data[0]='\0';
 }
+
+String& String::operator=(char c) {
+  clear(); // Clear the existing contents
+  len = 1;
+  data[0] = c;
+  data[1] = '\0'; // Null-terminate the string
+  return *this;
+}
