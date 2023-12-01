@@ -1,8 +1,8 @@
 #include "String.h"
 #include <iostream>
+#include <cstdlib>
 
 void testDefaultConstructor();
-
 void testCopyConstructor();
 // Add more test functions for other functionalities
 
@@ -10,7 +10,7 @@ int main() {
     testDefaultConstructor();
     testCopyConstructor();
     // Call other test functions
-    return 0;
+    std::exit(EXIT_SUCCESS);
 }
 
 void testDefaultConstructor() {
