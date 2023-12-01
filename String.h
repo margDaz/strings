@@ -1,4 +1,6 @@
 class String{
+  private:
+    int maxSize = 100;
 
   public:
     char* data;    // pointer to the character array
@@ -8,13 +10,8 @@ class String{
     String(const String& str);
     String(const char* str);
 
-    //Accessors
-    getValue();
-    getAllocator();
-    getReference();
-    getPointer();
-    getIterator();
-    getSize();
 
-    display();
+    int max_size() const;
+    void resize(int newSize,char c);
+    String operator+(const String& other) const;
 };

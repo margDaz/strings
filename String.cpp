@@ -48,3 +48,24 @@ String::String(const char* str) {
     // Add null terminator
     data[size] = '\0';
 }
+
+int String::max_size() const{
+  return maxSize;
+}
+
+void String::resize(int newSize,char c){
+  size = newSize;
+  if (newSize<=size){
+    //remove in the memory the values above the size n in the list
+  }else{
+    int i = size;
+    for(i=size;i<newSize;++i){
+      //add char c at the end to change the capacity and size
+      data = operator+(data, c);
+    }
+  }
+}
+
+String String::operator+(const String& other) const {
+
+}
