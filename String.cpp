@@ -1,6 +1,8 @@
 #include "String.h"
 #include <iostream>
 
+// Constructors
+
 String::String(){
   // Initialize with a default string, e.g., "Hello World"
   const char* defaultString = "Hello World";
@@ -53,37 +55,17 @@ String::~String(){
   delete data;
 }
 
+// Accessors
+
 int String::getCapacity(){
   return capacity;
 }
 
+// Member functions
+
 bool String::isEmpty(){
   return size == 0;
 }
-
-int String::max_size() const{
-  return maxSize;
-}
-/*
-void String::resize(int newSize,char c){
-  size = newSize;
-  if (newSize<=size){
-    //remove all, to replace by less (aka the newSize begining of data)
-    stockData = data[0;newSize-1];
-    clear();
-    data = stockData;
-  }else{
-    int i = size;
-    for(i=size;i<newSize;++i){
-      //add char c at the end to change the capacity and size
-      data = operator+(data, c);
-    }
-  }
-}
-
-String String::operator+(const String& other) const {
-
-}*/
 
 void String::reserve(int n){
   if (size + n > maxSize){
@@ -95,3 +77,10 @@ void String::reserve(int n){
     }
   }
 }
+
+// Operators
+/*
+void String::operator_eq(const char* p){
+  this->data = p;
+}
+*/

@@ -7,16 +7,18 @@ void testCopyConstructor();
 void testcapacity();
 void testEmpty();
 void testReserve();
+//void testOperator_eq();
 // Add more test functions for other functionalities
 
 int main() {
-    testDefaultConstructor();
+    //testDefaultConstructor();
     testCopyConstructor();
-    //testClear();
-    //testOperator();
+    //testOperator_eq();
     // Call other test functions
     std::exit(EXIT_SUCCESS);
 }
+
+//Constructors
 
 void testDefaultConstructor() {
     String str;
@@ -38,10 +40,15 @@ void testCopyConstructor() {
     std::cout << str2.data << std::endl;
 }
 
+
+// Accessors
+
 void testcapacity(){
   String str;
   std::cout << str.getCapacity() << std::endl;
 }
+
+//Member functions
 
 void testEmpty(){
   String str;
@@ -58,3 +65,16 @@ void testReserve(){
   str.reserve(10);
   std::cout << str.size << str.capacity << std::endl;
 }
+
+// Operators
+/*
+void testOperator_eq(){
+  String str("Bonjour");
+  String str2;
+  const char* p = str.data;
+
+  str2.operator_eq(p);
+
+  std::cout  << str.data << std::endl;
+}
+*/
