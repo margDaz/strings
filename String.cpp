@@ -5,7 +5,7 @@ String::String(){
   // Initialize with a default string, e.g., "Hello World"
   const char* defaultString = "Hello World";
   size = 0;
-  capacity = 100; // Initial capacity, can be adjusted based on requirements
+  capacity = 10; // Initial capacity, can be adjusted based on requirements
   data = new char[capacity];
 
   // Copy the default string manually
@@ -49,10 +49,8 @@ String::String(const char* str) {
     data[size] = '\0';
 }
 
-<<<<<<< HEAD
 String::~String(){
-  delete[] data;
-  size = 0;
+  delete data;
 }
 
 int String::getCapacity(){
@@ -61,11 +59,12 @@ int String::getCapacity(){
 
 bool String::isEmpty(){
   return size == 0;
-=======
+}
+
 int String::max_size() const{
   return maxSize;
 }
-
+/*
 void String::resize(int newSize,char c){
   size = newSize;
   if (newSize<=size){
@@ -84,5 +83,15 @@ void String::resize(int newSize,char c){
 
 String String::operator+(const String& other) const {
 
->>>>>>> 1069311dbb3a1b0d031d1f14c7cd2c6ed6d76c86
+}*/
+
+void String::reserve(int n){
+  if (size + n > maxSize){
+    std::cout << "ERROR : size is too big" << std::endl;
+  }else {
+    size += n;
+    if (capacity < size){
+      capacity = size;
+    }
+  }
 }
