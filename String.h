@@ -8,10 +8,10 @@ class String{
     String();
     String(const String& str);
     String(const char* str);
-    ~String()
+    ~String();
 
     //Accessors
-    int String::getCapacity();
+    int getCapacity();
     int size();
 
     // Member functions
@@ -23,5 +23,6 @@ class String{
 
   protected:
     int size_;
+    int maxSize = 100;
 
 };
