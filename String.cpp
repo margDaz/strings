@@ -1,65 +1,80 @@
 #include "String.h"
 #include <iostream>
 
+// Constructors
+
 String::String(){
   // Initialize with a default string, e.g., "Hello World"
   const char* defaultString = "Hello World";
-  len = 0;
+  size_ = 0;
   capacity = 100; // Initial capacity, can be adjusted based on requirements
   data = new char[capacity];
 
   // Copy the default string manually
-  while (defaultString[len] != '\0' && len < capacity - 1) {
-    data[len] = defaultString[len];
-    len++;
+  while (defaultString[size_] != '\0' && size_ < capacity - 1) {
+    data[size_] = defaultString[size_];
+    size_++;
   }
 
   // Add null terminator
-  data[len] = '\0';
+  data[size_] = '\0';
 }
 
 // Copy constructor
 String::String(const String& other) {
-  len = other.len;
+  size_ = other.size_;
   capacity = other.capacity;
   data = new char[capacity];
 
   // Copy the data from the other string
-  for (int i = 0; i <= len; ++i) {
+  for (int i = 0; i <= size_; ++i) {
     data[i] = other.data[i];
   }
 }
 
 // Constructor with a C-style string parameter
 String::String(const char* str) {
-    len = 0;
+    size_ = 0;
     capacity = 100; // Initial capacity, can be adjusted based on requirements
 
     data = new char[capacity];
 
-    while (str[len] != '\0' && len < capacity - 1) {
-      data[len] = str[len];
-      len++;
+    while (str[size_] != '\0' && size_ < capacity - 1) {
+      data[size_] = str[size_];
+      size_++;
     }
 
     // Add null terminator
-    data[len] = '\0';
+    data[size_] = '\0';
+}
+
+String::~String(){
+  delete data;
+}
+
+
+// Accessors
+
+int String::getCapacity(){
+  return capacity;
 }
 
 int String::size(){
-  return len;
+  return size_;
 }
+
+// Member functions
 
 void String::clear(){
   delete[] data;
-  len = 0;
+  size_ = 0;
   data = new char[capacity];
   data[0]='\0';
 }
 
 String& String::operator=(char c) {
   clear(); // Clear the existing contents
-  len = 1;
+  size_ = 1;
   data[0] = c;
   data[1] = '\0'; // Null-terminate the string
   return *this;
@@ -67,18 +82,40 @@ String& String::operator=(char c) {
 
 String String::operator+ (const char* rhs){
   String result(data);
-  int newlen = len;
-  int rhs_len = 0;
+  int newsize = size_;
+  int rhs_size = 0;
 
 
-  while (rhs[rhs_len] != '\0' && newlen < capacity - 1) {
-    result.data[newlen] = rhs[rhs_len];
-    newlen++;
-    rhs_len++;
+  while (rhs[rhs_size] != '\0' && newsize < capacity - 1) {
+    result.data[newsize] = rhs[rhs_size];
+    newsize++;
+    rhs_size++;
   }
 
-  result.data[newlen]='\0';
-  result.len=newlen;
+  result.data[newsize]='\0';
+  result.size_=newsize;
   return result;
 
 }
+
+bool String::isEmpty(){
+  return size_ == 0;
+}
+
+void String::reserve(int n){
+  if (size_ + n > maxSize){
+    std::cout << "ERROR : size is too big" << std::endl;
+  }else {
+    size_ += n;
+    if (capacity < size_){
+      capacity = size_;
+    }
+  }
+}
+
+// Operators
+/*
+void String::operator_eq(const char* p){
+  this->data = p;
+}
+*/
